@@ -1,0 +1,15 @@
+version: '2'
+services:
+    javart-app:
+        image: javart
+        external_links:
+            - javart-postgresql:postgresql
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://postgresql:5432/javart
+        ports:
+            - 8080:8080
+    javart-postgresql:
+        extends:
+            file: postgresql.yml
+            service: javart-postgresql

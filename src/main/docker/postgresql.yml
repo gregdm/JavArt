@@ -1,0 +1,12 @@
+version: '2'
+services:
+    javart-postgresql:
+        container_name: javart-postgresql
+        image: postgres:9.5.1
+        # volumes:
+        #     - ~/volumes/jhipster/javart/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=javart
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

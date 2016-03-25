@@ -1,0 +1,24 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.0.0",
+    "baseName": "javart",
+    "packageName": "com.gregdm.javart",
+    "packageFolder": "com/gregdm/javart",
+    "serverPort": "8080",
+    "authenticationType": "oauth2",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "no",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "h2Memory",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "no",
+    "buildTool": "maven",
+    "useSass": false,
+    "applicationType": "monolith",
+    "testFrameworks": [
+      "gatling"
+    ],
+    "enableTranslation": false
+  }
+}
