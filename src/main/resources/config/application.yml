@@ -67,3 +67,7 @@ jhipster:
         contactEmail:
         license:
         licenseUrl:
+
+rmngp:
+    apiKey : 867c6f9152a839360b3619a4b11eb87de567e86b9184627016ced9a4bdb7091e
+    url : https://api.art.rmngp.fr/v1/
