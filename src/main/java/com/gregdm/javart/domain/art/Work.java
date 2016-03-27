@@ -1,27 +1,47 @@
 package com.gregdm.javart.domain.art;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
  * Created by Greg on 26/03/2016.
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Work {
 
+    @JsonProperty("id")
     private String artId;
-    private String popularity;
-    private String title;
+    @JsonProperty("popularity")
+    private double popularity;
+    @JsonProperty("title")
+    private FrObject title;
+    @JsonProperty("slug")
     private String slug;
+    @JsonProperty("detail")
     private String detail;
+    @JsonProperty("date")
     private ArtDate date;
+    @JsonProperty("inventory_number")
     private String inventoryNumber;
-    private String copyright;
+    @JsonProperty("use")
     private String use;
-    private Long height;
-    private Long width;
+    @JsonProperty("height")
+    private long height;
+    @JsonProperty("width")
+    private long width;
+    @JsonProperty("depth")
     private Long depth;
+    @JsonProperty("diameter")
     private String diameter;
+    @JsonProperty("images")
     private List<ArtImage> images;
+    @JsonProperty("wikipedia_url")
     private String wikipediaUrl;
+    @JsonProperty("wikipedia_extract")
     private String wikipediaExtract;
+    @JsonProperty("external_urls")
     private String externalUrls;
 }

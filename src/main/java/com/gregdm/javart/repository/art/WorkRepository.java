@@ -1,20 +1,23 @@
 package com.gregdm.javart.repository.art;
 
 import com.gregdm.javart.domain.art.Work;
-import com.gregdm.javart.domain.art.wrapper.WorkList;
+import com.gregdm.javart.domain.art.wrapper.ResponseWrapper;
 import com.gregdm.javart.service.art.config.ArtApiProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.client.RestTemplate;
 
 import javax.inject.Inject;
+import java.util.Optional;
 
 /**
  * Created by Greg on 26/03/2016.
  */
+@Repository
 @EnableConfigurationProperties(ArtApiProperties.class)
 public class WorkRepository {
 
@@ -27,18 +30,23 @@ public class WorkRepository {
     @Inject
     protected RestTemplate artApiRestTemplate;
 
-    public Work get(String id) {
+    public Optional<Work> get(String id) {
         try {
             String url = properties.getUrl() + "works/" + id;
 
-            HttpEntity<String> entity = new HttpEntity<>(artApiHeader);
-            ResponseEntity<WorkList> responseEntity = artApiRestTemplate.exchange(
+            HttpEntity<String> headers = new HttpEntity<>(artApiHeader);
+            ResponseEntity<ResponseWrapper> responseEntity = artApiRestTemplate.exchange(
                 url,
                 HttpMethod.GET,
-                entity,
-                WorkList.class
+                headers,
+                ResponseWrapper.class
             );
-            return responseEntity.getBody().getWorks().get(1);
+            ResponseWrapper hits = responseEntity.getBody();
+            if(hits != null && !hits.isTimeOut() && hits.getHits().getTotal() > 0) {
+                return Optional.of(hits.getHits().getHits().get(0).getWork());
+            } else {
+                return Optional.empty();
+            }
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

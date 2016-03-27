@@ -76,3 +76,7 @@ jhipster:
         contactEmail:
         license:
         licenseUrl:
+
+rmngp:
+    apiKey : demo
+    url : https://api.art.rmngp.fr/v1/
