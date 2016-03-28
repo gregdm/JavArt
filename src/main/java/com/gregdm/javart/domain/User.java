@@ -82,6 +82,18 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @OneToMany
     private Set<Album> albums = new HashSet<>();
 
+    @OneToMany
+    private Set<Album> commentaries = new HashSet<>();
+
+
+    public Set<Album> getCommentaries() {
+        return commentaries;
+    }
+
+    public void setCommentaries(Set<Album> commentaries) {
+        this.commentaries = commentaries;
+    }
+
     public Set<Album> getAlbums() {
         return albums;
     }
