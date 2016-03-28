@@ -13,7 +13,7 @@ import java.util.List;
 public class Work {
 
     @JsonProperty("id")
-    private String artId;
+    private String workId;
     @JsonProperty("popularity")
     private double popularity;
     @JsonProperty("title")

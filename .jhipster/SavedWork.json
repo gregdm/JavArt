@@ -1,0 +1,27 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "login"
+        },
+        {
+            "relationshipName": "album",
+            "otherEntityName": "album",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "workId",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160328160540",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "saved_work",
+    "pagination": "infinite-scroll"
+}
