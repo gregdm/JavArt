@@ -5,6 +5,7 @@ import com.gregdm.javart.repository.art.WorkRepository;
 import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
+import java.util.Optional;
 
 /**
  * Created by Greg on 26/03/2016.
@@ -15,7 +16,7 @@ public class WorkService {
     @Inject
     private WorkRepository workRepository;
 
-    public Work get(String id){
+    public Optional<Work> get(String id){
         return workRepository.get(id);
     }
 

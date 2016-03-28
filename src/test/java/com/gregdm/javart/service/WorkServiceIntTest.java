@@ -38,7 +38,6 @@ public class WorkServiceIntTest {
 
     @Test
     public void assertRestTemplateIsOk() {
-        Work work = workService.get("199751");
-        assertThat(work).isNotNull();
+        assertThat(workService.get("199751")).isPresent();
     }
 }

@@ -33,7 +33,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @JsonIgnore
     @NotNull
-    @Size(min = 60, max = 60) 
+    @Size(min = 60, max = 60)
     @Column(name = "password_hash",length = 60)
     private String password;
 
@@ -78,6 +78,17 @@ public class User extends AbstractAuditingEntity implements Serializable {
         joinColumns = {@JoinColumn(name = "user_id", referencedColumnName = "id")},
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
     private Set<Authority> authorities = new HashSet<>();
+
+    @OneToMany
+    private Set<Album> albums = new HashSet<>();
+
+    public Set<Album> getAlbums() {
+        return albums;
+    }
+
+    public void setAlbums(Set<Album> albums) {
+        this.albums = albums;
+    }
 
     public Long getId() {
         return id;

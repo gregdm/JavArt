@@ -1,0 +1,21 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "user",
+            "otherEntityName": "user",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160327225850",
+    "dto": "mapstruct",
+    "service": "serviceClass",
+    "entityTableName": "album",
+    "pagination": "infinite-scroll"
+}
