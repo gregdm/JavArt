@@ -21,7 +21,7 @@ public class Work {
     @JsonProperty("slug")
     private String slug;
     @JsonProperty("detail")
-    private String detail;
+    private FrObject detail;
     @JsonProperty("date")
     private ArtDate date;
     @JsonProperty("inventory_number")
@@ -39,9 +39,7 @@ public class Work {
     @JsonProperty("images")
     private List<ArtImage> images;
     @JsonProperty("wikipedia_url")
-    private String wikipediaUrl;
+    private FrObject wikipediaUrl;
     @JsonProperty("wikipedia_extract")
-    private String wikipediaExtract;
-    @JsonProperty("external_urls")
-    private String externalUrls;
+    private FrObject wikipediaExtract;  
 }

@@ -79,28 +79,28 @@ public class User extends AbstractAuditingEntity implements Serializable {
         inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "name")})
     private Set<Authority> authorities = new HashSet<>();
 
-    @OneToMany
-    private Set<Album> albums = new HashSet<>();
-
-    @OneToMany
-    private Set<Album> commentaries = new HashSet<>();
-
-
-    public Set<Album> getCommentaries() {
-        return commentaries;
-    }
-
-    public void setCommentaries(Set<Album> commentaries) {
-        this.commentaries = commentaries;
-    }
-
-    public Set<Album> getAlbums() {
-        return albums;
-    }
-
-    public void setAlbums(Set<Album> albums) {
-        this.albums = albums;
-    }
+//    @OneToMany
+//    private Set<Album> albums = new HashSet<>();
+//
+//    @OneToMany
+//    private Set<Album> commentaries = new HashSet<>();
+//
+//
+//    public Set<Album> getCommentaries() {
+//        return commentaries;
+//    }
+//
+//    public void setCommentaries(Set<Album> commentaries) {
+//        this.commentaries = commentaries;
+//    }
+//
+//    public Set<Album> getAlbums() {
+//        return albums;
+//    }
+//
+//    public void setAlbums(Set<Album> albums) {
+//        this.albums = albums;
+//    }
 
     public Long getId() {
         return id;

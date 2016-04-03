@@ -37,7 +37,17 @@ public class WorkServiceIntTest {
     private WorkService workService;
 
     @Test
-    public void assertRestTemplateIsOk() {
+    public void testGetWorkRepository() {
         assertThat(workService.get("199751")).isPresent();
+    }
+
+    @Test
+    public void testSearchWorksRepository() {
+        assertThat(workService.search("la joconde")).isNotNull();
+    }
+
+    @Test
+    public void testSearchWorksRepository2() {
+        assertThat(workService.search("leonard").size()).isGreaterThan(1);
     }
 }
